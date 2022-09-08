@@ -1,0 +1,22 @@
+@import 'normalize.css';
+//add font ...
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap');
+
+:root {
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    //reset 1rem = 10px
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.6rem;
+    text-rendering: optimizeSpeed; //render text speed
+}
