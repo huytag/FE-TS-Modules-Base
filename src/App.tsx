@@ -1,7 +1,6 @@
 import React from 'react';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Home from './Pages/Home';
-import Detail from './Pages/Detail';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { publicRoutes } from './router';
 
 
 const App: React.FC = () => {
@@ -9,8 +8,10 @@ const App: React.FC = () => {
     <Router>
       <div className="App">
         <Routes>
-          <Route path='/' element={<Home/>} />
-          <Route path='/detail' element={<Detail/>} />
+          {publicRoutes.map((route, index) => {
+            const Page = route.component;
+            return <Route key={index} path={route.path} element={<Page />}/>
+          })}
         </Routes>
       </div>
     </Router>
